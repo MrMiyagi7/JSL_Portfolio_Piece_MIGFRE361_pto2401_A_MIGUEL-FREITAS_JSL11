@@ -45,12 +45,11 @@ body {
 }
 
 .side-bar {
-  /*  */
+  display: flex;
   background-color: var(--primary-color);
   /* border: 5px solid rgb(0, 0, 0); */
   border-right: 0.1px solid #979797;
   /* flex: 0.8; */
-  display: none;
   flex-direction: column;
   gap: 50px;
   /* padding-left: 50px; */
@@ -60,6 +59,7 @@ body {
   margin-right: 0;
   /* padding: 0 12px 0 26px; */
   width: 350px;
+  color: var(--primary-color);
 }
 
 .boards-nav-links-div {
@@ -810,8 +810,7 @@ input:checked + #label-checkbox-theme:after {
 
   /* .side-bar.show-sidebar {
     display: none !important;
-  }
-
+  } */
 
   .container {
     max-width: 100%;
@@ -819,8 +818,7 @@ input:checked + #label-checkbox-theme:after {
 
   #header-board-name {
     font-size: 12px;
-  } */
-
+  }
   .side-bar.show-sidebar {
     position: fixed;
     height: auto;
@@ -845,7 +843,9 @@ input:checked + #label-checkbox-theme:after {
     background-color: transparent;
     border: none;
     margin-left: 10px;
+    margin-right: 10px;
     padding: 0;
+    width: 20px;
   }
 
   .logo-mobile {
@@ -865,7 +865,7 @@ input:checked + #label-checkbox-theme:after {
   }
 
   .boards-nav-links-div {
-    gap: 0;
+    gap: 10px;
     height: 100%;
   }
 
@@ -930,10 +930,10 @@ input:checked + #label-checkbox-theme:after {
   .side-bar {
     display: none;
     padding: 0;
-    height: 60%;
+    height: 35%;
     width: 30%;
     position: absolute;
-    top: 30%;
+    top: 23%;
     left: 50%;
     transform: translate(-50%, -50%);
     font-size: 0.8rem;
@@ -967,6 +967,7 @@ input:checked + #label-checkbox-theme:after {
     padding-left: 18px;
     padding-right: 10px;
     border: none;
+    padding-top: 5px;
   }
 
   #edit-board-btn {
@@ -982,8 +983,8 @@ input:checked + #label-checkbox-theme:after {
   }
 
   #add-new-task-btn {
-    font-size: 0;
-    padding: 12px;
+    font-size: 12px;
+    padding: 5px;
   }
 
   #editBoardDiv {
@@ -1068,7 +1069,10 @@ input:checked + #label-checkbox-theme:after {
   }
 
   .dropdownBtn {
-    display: block;
+    display: inline-block;
+    position: absolute;
+    right: 22%;
+    bottom: 40%;
     background-color: transparent;
     border: none;
     margin-left: 10px;
@@ -1078,6 +1082,7 @@ input:checked + #label-checkbox-theme:after {
   .logo-mobile {
     display: block;
     margin-right: 10px;
+    margin-top: 10px;
   }
 
   body {
@@ -1092,7 +1097,7 @@ input:checked + #label-checkbox-theme:after {
   }
 
   .boards-nav-links-div {
-    gap: 0;
+    gap: 4px;
     height: 100%;
   }
 
@@ -1168,11 +1173,11 @@ input:checked + #label-checkbox-theme:after {
   .side-bar {
     display: none;
     padding: 0;
-    height: 60%;
+    height: 40%;
     width: 60%;
     /* border: 2px solid green; */
     position: absolute;
-    top: 50%;
+    top: 29%;
     left: 50%;
     transform: translate(-50%, -50%);
     font-size: 0.8rem;
@@ -1230,6 +1235,8 @@ input:checked + #label-checkbox-theme:after {
   #add-new-task-btn {
     font-size: 0;
     padding: 12px;
+    position: absolute;
+    right: 10px;
   }
 
   #editBoardDiv {
@@ -1261,6 +1268,9 @@ input:checked + #label-checkbox-theme:after {
 
   #header-board-name {
     font-size: 16px;
+    position: absolute;
+    right: 30%;
+    bottom: 22%;
   }
 
   .column-div {
@@ -1275,7 +1285,8 @@ input:checked + #label-checkbox-theme:after {
     /* box-sizing: border-box; */
   }
 
-  .modal-window {
+  .modal-window,
+  .board-modal-window {
     width: 95%;
   }
 
