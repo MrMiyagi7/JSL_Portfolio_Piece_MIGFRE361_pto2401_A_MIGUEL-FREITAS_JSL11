@@ -220,6 +220,23 @@ function addTask(event) {
   }
 }
 
+function addBoard(event) {
+  event.preventDefault();
+  const idDate = new Date();
+  const newBoard = document.getElementById("board-title-input").value;
+  const defaultTask = {
+    title: `Set up your first task for ${newBoard}`,
+    decription: "",
+    status: "todo",
+    id: idDate,
+    board: newBoard,
+  };
+  createNewTask(defaultTask);
+  refreshTasksUI();
+  toggleModal(false, elements.createNewBoardModal);
+  fetchAndDisplayBoardsAndTasks();
+}
+
 function toggleSidebar(show) {
   const sideBar = document.getElementById("side-bar-div");
 
