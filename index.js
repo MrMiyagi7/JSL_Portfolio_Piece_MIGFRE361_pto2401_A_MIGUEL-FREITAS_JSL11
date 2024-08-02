@@ -283,6 +283,11 @@ function init() {
   const isLightTheme = localStorage.getItem("light-theme") === "enabled";
   document.body.classList.toggle("light-theme", isLightTheme);
   const logo = document.getElementById("logo");
+  if (logo) {
+    logo.src = isLightTheme
+      ? "./assets/logo-light.svg"
+      : "./assets/logo-dark.svg";
+  }
 
   fetchAndDisplayBoardsAndTasks(); // Initial display of boards and tasks
 }
