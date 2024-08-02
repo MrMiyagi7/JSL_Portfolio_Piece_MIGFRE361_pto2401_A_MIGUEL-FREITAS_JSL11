@@ -176,6 +176,19 @@ function setupEventListeners() {
   elements.hideSideBarBtn.addEventListener("click", () => toggleSidebar(false));
   elements.showSideBarBtn.addEventListener("click", () => toggleSidebar(true));
 
+  // mobile sidebar
+  elements.dropDownBtn.addEventListener("click", () => {
+    if (localStorage.getItem("showSideBar") === "true") {
+      toggleSidebar(false);
+      document.getElementById("dropDownIcon").src =
+        "./assets/icon-chevron-down.svg";
+    } else {
+      toggleSidebar(true);
+      document.getElementById("dropDownIcon").src =
+        "./assets/icon-chevron-up.svg";
+    }
+  });
+
   // Theme switch event listener
   elements.themeSwitch.addEventListener("change", toggleTheme);
 
@@ -349,9 +362,17 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 function init() {
+  initializeData();
   setupEventListeners();
   const showSidebar = localStorage.getItem("showSideBar") === "true";
   toggleSidebar(showSidebar);
+  if (showSidebar === true) {
+    document.getElementById("dropDownIcon").src =
+      "./assets/icon-chevron-up.svg";
+  } else {
+    document.getElementById("dropDownIcon").src =
+      "./assets/icon-chevron-down.svg";
+  }
   const isLightTheme = localStorage.getItem("light-theme") === "enabled";
   document.body.classList.toggle("light-theme", isLightTheme);
   const logo = document.getElementById("logo");
