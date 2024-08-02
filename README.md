@@ -1,5 +1,11 @@
 ### [JSL11] Agile Board - Kanban Task Management App
 
+### Loom Recordings
+
+https://www.loom.com/share/0f7e9b7a0309403192bfd615bdc47a72?sid=02a96a09-f508-44c2-9ed2-d413dae7958b
+https://www.loom.com/share/c9c3cbcc2dd84362aa7fb99c0d1f47de?sid=435c5ff2-508b-4366-b44f-89a519095b53
+https://www.loom.com/share/46800863062d49fea7fffd38e9802eef?sid=1b2eeef8-c290-4165-bbdd-fd8a67f38fdc
+
 ## Agile board
 
 # Overview
