@@ -220,7 +220,16 @@ function addTask(event) {
   }
 }
 
-function toggleSidebar(show) {}
+function toggleSidebar(show) {
+  const sideBar = document.getElementById("side-bar-div");
+
+  if (sideBar && elements.showSideBarBtn) {
+    sideBar.style.display = show ? "flex" : "none";
+    elements.showSideBarBtn.style.display = show ? "none" : "flex";
+  }
+
+  localStorage.setItem("showSideBar", show.toString());
+}
 
 function toggleTheme() {}
 
