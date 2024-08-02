@@ -231,7 +231,20 @@ function toggleSidebar(show) {
   localStorage.setItem("showSideBar", show.toString());
 }
 
-function toggleTheme() {}
+function toggleTheme() {
+  const isLightTheme = document.body.classList.toggle("light-theme");
+  const logo = document.getElementById("logo");
+
+  if (isLightTheme) {
+    localStorage.setItem("light-theme", "enabled");
+    logo.src = "./assets/logo-light.svg";
+    logo.alt = "logo-dark";
+  } else {
+    localStorage.setItem("light-theme", "disabled");
+    logo.src = "./assets/logo-dark.svg";
+    logo.alt = "logo-dark";
+  }
+}
 
 function openEditTaskModal(task) {
   // Set task details in modal inputs
@@ -269,5 +282,7 @@ function init() {
   toggleSidebar(showSidebar);
   const isLightTheme = localStorage.getItem("light-theme") === "enabled";
   document.body.classList.toggle("light-theme", isLightTheme);
+  const logo = document.getElementById("logo");
+
   fetchAndDisplayBoardsAndTasks(); // Initial display of boards and tasks
 }
