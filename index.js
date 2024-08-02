@@ -246,15 +246,46 @@ function toggleTheme() {
   }
 }
 
+let saveChangesListener = null;
+let deleteTaskListner = null;
+
 function openEditTaskModal(task) {
   // Set task details in modal inputs
-
+  document.getElementById("edit-task-title-input").value = task.title;
+  document.getElementById("edit-task-desc-input").value = task.description;
+  document.getElementById("edit-select-status").value = task.status;
+  const taskId = task.id;
   // Get button elements from the task modal
+  const btnModalElements = {
+    saveTask: document.getElementById("save-task-changes-btn"),
+    deleteTask: document.getElementById("delete-task-btn"),
+  };
 
+  // removes event listners if there are pre existing
+
+  if (saveChangesListener) {
+    btnModalElements.saveTask.removeEventListener("click", saveChangesListener);
+  }
+
+  if (deleteTaskListner) {
+    btnModalElements.deleteTask.removeEventListener("click", deleteTaskListner);
+  }
   // Call saveTaskChanges upon click of Save Changes button
 
+  saveChangesListener = () => saveTaskChanges(taskId);
   // Delete task using a helper function and close the task modal
 
+  deleteTaskListner = () => {
+    deleteTask(taskId);
+    refreshTasksUI();
+    fetchAndDisplayBoardsAndTasks();
+    toggleModal(false, elements.editTaskModal);
+  };
+  // Calls the saveChanges listner function on click
+  btnModalElements.saveTask.addEventListener("click", saveChangesListener);
+
+  // Calls delete task listner function on click
+  btnModalElements.deleteTask.addEventListener("click", deleteTaskListner);
   toggleModal(true, elements.editTaskModal); // Show the edit task modal
 }
 
