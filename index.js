@@ -190,6 +190,22 @@ function setupEventListeners() {
     addTask(event);
   });
 }
+// Add new board form submission event listener
+elements.createNewBoardModal.addEventListener("submit", (event) => {
+  addBoard(event);
+});
+
+// Add new board form submission event listener
+
+elements.createNewBoardBtn.addEventListener("click", () => {
+  toggleModal(true, elements.createNewBoardModal);
+  toggleSidebar(false);
+  document.getElementById("dropDownIcon").src =
+    "./assets/icon-chevron-down.svg";
+});
+elements.cancelNewBoard.addEventListener("click", () => {
+  toggleModal(false, elements.createNewBoardModal);
+});
 
 // Toggles tasks modal
 function toggleModal(show, modal = elements.modalWindow) {
@@ -233,6 +249,7 @@ function addBoard(event) {
   };
   createNewTask(defaultTask);
   refreshTasksUI();
+  event.target.reset();
   toggleModal(false, elements.createNewBoardModal);
   fetchAndDisplayBoardsAndTasks();
 }
