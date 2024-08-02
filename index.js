@@ -9,22 +9,34 @@ import {
 } from "./utils/taskFunctions.js";
 
 
-/*************************************************************************************************************************************************
- * FIX BUGS!!!
- * **********************************************************************************************************************************************/
-
 // Function checks if local storage already has data, if not it loads initialData to localStorage
 function initializeData() {
-  if (!localStorage.getItem('tasks')) {
-    localStorage.setItem('tasks', JSON.stringify(initialData)); 
-    localStorage.setItem('showSideBar', 'true')
+  if (!localStorage.getItem("tasks")) {
+    localStorage.setItem("tasks", JSON.stringify(initialData));
+    localStorage.setItem("showSideBar", "true");
   } else {
-    console.log('Data already exists in localStorage');
+    console.log("Data already exists in localStorage");
   }
 }
 
 // TASK: Get elements from the DOM
 const elements = {
+  headerBoardName: document.getElementById("header-board-name"),
+  filterDiv: document.getElementById("filterDiv"),
+  columnDivs: document.querySelectorAll(".column-div"),
+  hideSideBarBtn: document.getElementById("hide-side-bar-btn"),
+  showSideBarBtn: document.getElementById("show-side-bar-btn"),
+  themeSwitch: document.getElementById("switch"),
+  editTaskModal: document.getElementById("edit-btn"),
+  createNewTaskBtn: document.getElementById("add-new-task-btn"),
+  modalWindow: document.querySelector(".modal-window"),
+  editTaskModal: document.querySelector(".edit-task-modal-window"),
+  createNewBoardModal: document.getElementById("new-board-modal-window"),
+  createNewBoardBtn: document.getElementById("create-board-btn"),
+  saveNewBoardBtn: document.getElementById("save-board-btn"),
+  cancelAddTaskBtn: document.getElementById("cancel-add-task-btn"),
+  cancelNewBoard: document.getElementById("cancel-add-board-btn"),
+  dropDownBtn: document.getElementById("dropdownBtn"),
 
 }
 
